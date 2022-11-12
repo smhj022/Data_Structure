@@ -1,7 +1,7 @@
-# TODO : DYNAMIC CONNECTIVITY
+# TODO : DYNAMIC CONNECTIVITY WITH QUICK FIND
 
 # PROBLEM STATEMENT --> There is a set of different numbers, in which Numbers can be connected by each
-# other. So we have to write the code that can connent numbers and find if they are connected or not.
+# other. So we have to write the code that can connect numbers and find if they are connected or not.
 #  For Example :
 
 #         1----2    3----4    5
@@ -31,17 +31,13 @@
 
 # QUICK FIND
 
-# In quick find approch the initially the id (same as number) is given to every number. When the
+# In quick find approach the initially the id (same as number) is given to every number. When the
 # number connects the ids will become same of the connected numbers
 
 
-class Quickfind():
+class QuickFind():
     def __init__(self, total_num):
-        self.number_array = list(range(0, total_num))
-        self.ids = self.number_array
-
-    def test(self):
-        print(self.ids)
+        self.ids = list(range(0, total_num))
 
     def union(self, num1, num2):
         # check if the id of num1 and num2 are same or not
@@ -65,8 +61,7 @@ class Quickfind():
         return False
 
 
-dynamic_connect = Quickfind(25)
-
+dynamic_connect = QuickFind(25)
 
 dynamic_connect.union(2, 6)
 dynamic_connect.union(1, 3)
@@ -74,7 +69,7 @@ dynamic_connect.union(3, 4)
 dynamic_connect.union(6, 1)
 dynamic_connect.union(2, 3)
 
-print(dynamic_connect.test())
+
 print(dynamic_connect.connected(7, 4))
 
 
