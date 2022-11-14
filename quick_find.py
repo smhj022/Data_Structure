@@ -56,12 +56,10 @@ class QuickFind():
         return self.ids
 
     def connected(self, num1, num2):
-        if self.ids[num1] == self.ids[num2]:
-            return True
-        return False
+        return self.ids[num1] == self.ids[num2]
 
 
-dynamic_connect = QuickFind(25)
+dynamic_connect = QuickFind(10)
 
 dynamic_connect.union(2, 6)
 dynamic_connect.union(1, 3)
@@ -71,7 +69,7 @@ dynamic_connect.union(2, 3)
 
 
 print(dynamic_connect.connected(7, 4))
-
+print(dynamic_connect.ids)
 
 # Time complexity of the problem
 
@@ -85,3 +83,8 @@ print(dynamic_connect.connected(7, 4))
 # quadratic time. Quadratic equations are really slower so that they dont scale.
 
 # Union is too expensive in quick find method
+
+# # Quick find defects
+
+# 1) union is too expensive.
+# 2) Trees are flat, but too expensive to keep them flat.
